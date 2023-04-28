@@ -1,0 +1,14 @@
+{
+   "name": "resumable-task-runner",
+   "version": "1.0.1",
+   "description": "",
+   "main": "./src/index.js",
+   "scripts": {
+      "start": "node ./src/test.js"
+   },
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "json-beautify": "^1.1.1"
+   }
+}
