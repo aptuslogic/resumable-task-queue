@@ -1,7 +1,7 @@
 const fs = require('fs');
 const beautify = require('json-beautify');
 
-let statusFilename = './ipm-status.json';
+let statusFilename = './rtq-status.json';
 
 function setStatusFilename (fname) {
 	statusFilename = fname;
@@ -241,40 +241,15 @@ async function runCallbackNode (tree, node) {
 }
 
 function del (name) {
-/*
-	if (name[0] === '@') {
-*/
-		delete (this.globals[name]);
-/*
-	} else {
-		// look up in hierarchy, find closest match
-	}
-*/
+	delete (this.globals[name]);
 }
 
 function get(name) {
-/*
-	if (name[0] === '@') {
-*/
-		return this.globals[name];
-/*
-	} else {
-		// look up in hierarchy, find closest match
-	}
-*/
+	return this.globals[name];
 }
 
 function set (name, val) {
-/*
-	if (name[0] === '@') {
-*/
-		this.globals[name] = val;
-/*
-	}
-	else {
-		// look up in hierarchy, find closest match
-	}
-*/
+	this.globals[name] = val;
 }
 
 module.exports = {run, get, set, del, setStatusFilename};

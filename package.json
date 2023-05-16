@@ -1,11 +1,8 @@
 {
-   "name": "resumable-task-runner",
+   "name": "resumable-task-queue",
    "version": "1.0.1",
    "description": "",
    "main": "./src/index.js",
-   "scripts": {
-      "start": "node ./src/test.js"
-   },
    "author": "",
    "license": "ISC",
    "dependencies": {
