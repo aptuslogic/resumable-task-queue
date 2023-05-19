@@ -1,5 +1,4 @@
 const fs = require('fs');
-const beautify = require('json-beautify');
 
 let statusFilename = './rtq-status.json';
 
@@ -210,7 +209,7 @@ function loadStatus (tree) {
 }
 
 async function saveStatus (tree) {
-	fs.writeFileSync(statusFilename, beautify({
+	fs.writeFileSync(statusFilename, JSON.stringify({
 		//structure: tree.head,
 		globals: tree.globals,
 		currPos: tree.currPos,

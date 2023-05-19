@@ -1,11 +1,14 @@
 {
    "name": "resumable-task-queue",
-   "version": "1.0.1",
-   "description": "",
+   "version": "1.0.3",
+   "description": "A simple zero-dependency framework for creating asynchronous task runner services in NodeJS",
    "main": "./src/index.js",
-   "author": "",
-   "license": "ISC",
-   "dependencies": {
-      "json-beautify": "^1.1.1"
-   }
+   "author": {
+      "name": "Eric Adem",
+      "email": "eric@aptuslogic.com"
+   },
+   "url": "https://github.com/aptuslogic/resumable-task-queue",
+   "repository": "https://github.com/aptuslogic/resumable-task-queue",
+   "homepage": "https://github.com/aptuslogic/resumable-task-queue#readme",
+   "license": "ISC"
 }
