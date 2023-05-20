@@ -1,6 +1,6 @@
 {
    "name": "resumable-task-queue",
-   "version": "1.0.3",
+   "version": "1.0.4",
    "description": "A simple zero-dependency framework for creating asynchronous task runner services in NodeJS",
    "main": "./src/index.js",
    "author": {

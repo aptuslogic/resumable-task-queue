@@ -62,13 +62,35 @@ Or, if you are using require statements, you can use this:
 
 ### Functions
 
-- $
-- $each
-- setStatusFilename
-- run
-- then
-- each
-- get
-- set
+#### $ (taskFunction)
 
-//ega finish this section
+This function creates a new task queue (or body of a loop) with a simple task function.  It takes one parameter, which is the task function to be called.  It returns an object representing the queue, which can be used to chain further tasks to the queue.
+
+#### $each (loopVar, loopInstanceVar, taskQueue)
+
+This function creates a new task queue (or body of a loop) with a loop.  It takes three parameters.  The first specifies what variable is to be looped on, presumably an array.  The second specifies what variable should be set to the current instance at each iteration of the loop.  The third is a child task queue to be used as the body of this loop.
+
+#### then (taskFunction)
+
+This function, to be called on a task queue object, adds a new task to the end of a queue, using a simple task function.  It takes one parameter, which is the function to be called.  It returns the task queue, which can be used to chain further tasks to the queue.
+
+#### each (loopVar, loopInstanceVar, taskQueue)
+
+This function, to be called on a task queue object, adds a loop to the end of a queue.  It takes three parameters.  The first specifies what variable is to be looped on, presumably an array.  The second specifies what variable should be set to the current instance at each iteration of the loop.  The third is a child task queue to be used as the body of this loop.
+
+#### setStatusFilename (filename)
+
+This function allows you to specify the location and name of the file to be used for the current status of the engine.  Its default is "./rtq-status.json".
+
+#### run ()
+
+This function, to be called on a task queue object, begins running the task queue.  This should only be called on your top-level task queue object, not on any children task queues created for loops.
+
+#### Task functions
+
+Your task functions, when called, will receive an object with these fields:
+
+- `get (name)`: A function to get the value of a variable, as specified by `name`.
+- `set (name, value)`: A function to set a variable, as specified by `name` and the value specified by `value`.
+
+Task functions don't have to return any value, but if you want to halt execution of the task queue (e.g. because you hit an API rate limit), then explicitly return false from the function.  This will halt the execution and save off the status.
